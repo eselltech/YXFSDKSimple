@@ -30,7 +30,7 @@ android:process=":mqtt" />
         
         /*初始化*/
         
-        yxf.init(getApplicationContext(), "appId", "appKey",
+        yxf.init(getApplicationContext(), "yxfAppId", "yxfAppKey",
                 new OnInitListener() {
             @Override
             public void onSuccess() {
@@ -74,4 +74,11 @@ android:process=":mqtt" />
 //        下载
 
 //        configManager.setDownload();
+
+//配置屏效宝广告&关联广告位
+
+        yxf.rtbConfig("pxbAppId", "pxbAppKey", "唯一编码");
+
+        yxf.rtbLink(slotView, new RtbSlot[]{new RtbSlot("广告位id", "类型", 1/*数量*/), new RtbSlot(
+                "广告位id", "类型", 1/*数量*/)});
         
