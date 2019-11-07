@@ -81,4 +81,28 @@ android:process=":mqtt" />
 
         yxf.rtbLink(slotView, new RtbSlot[]{new RtbSlot("广告位id", "类型", 1/*数量*/), new RtbSlot(
                 "广告位id", "类型", 1/*数量*/)});
+                
+                
+//主动获取普通广告
+
+ yxf.getNormalAdList(new OnAdListener() {
+ 
+            @Override
+            public void onAd(List<? extends AD> adList) {
+            
+
+            }
+});
+
+//主动获取rtb广告
+
+RtbRequest.request(this, "appId", "appKey", "设备唯一编码", "广告位id", "类型", 1/*数量*/, new OnAdListener() {
+
+            @Override
+            public void onAd(List<? extends AD> adList) {
+            
+                Log.d(TAG,  "onAd (line 21): "+adList);
+            }
+            
+});
         
