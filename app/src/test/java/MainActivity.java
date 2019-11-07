@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         /*打开调试信息*/
         yxf.debug(true);
         /*初始化*/
-        yxf.init(getApplicationContext(), "zjXTg5lcVvOnztX", "YJLsO0sbByHy76mAvCn7jMGFymzwi3p",
+        yxf.init(getApplicationContext(), "yxfAppId", "yxfAppKey",
                 new OnInitListener() {
             @Override
             public void onSuccess() {
@@ -48,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         final SlotView slotView = new SlotView(getApplicationContext());
         /*配置屏效宝广告*/
-        yxf.rtbConfig("vazazjhenhc5psfz", "71vr6anlbg2f9lvhbbhgj8fy79b55xuc", "419102906489");
+        yxf.rtbConfig("pxbAppId", "pxbAppKey", "唯一编码");
         /*关联广告位*/
-        yxf.rtbLink(slotView, new RtbSlot[]{new RtbSlot("25075489", "IMG", 1), new RtbSlot(
-                "25075490", "VDO", 1)});
+        yxf.rtbLink(slotView, new RtbSlot[]{new RtbSlot("广告位id", "类型", 1/*数量*/), new RtbSlot(
+                "广告位id", "类型", 1/*数量*/)});
 
         FrameLayout container = findViewById(R.id.container);
         container.addView(slotView);
