@@ -17,10 +17,11 @@ implementation 'com.esell:yxf:lastVersion'
     
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     
- #3、添加服务  
-         <service
-            android:name="com.esell.component_mqtt.EsellMqttService"
-            android:process=":mqtt" />
+#3、添加服务
+
+service android:name="com.esell.component_mqtt.EsellMqttService"
+android:process=":mqtt" />
+            
  #4、获取实例初始化
  
   /*获取实例*/
@@ -29,7 +30,7 @@ implementation 'com.esell:yxf:lastVersion'
         
         /*初始化*/
         
-        yxf.init(getApplicationContext(), "zjXTg5lcVvOnztX", "YJLsO0sbByHy76mAvCn7jMGFymzwi3p",
+        yxf.init(getApplicationContext(), "appId", "appKey",
                 new OnInitListener() {
             @Override
             public void onSuccess() {
