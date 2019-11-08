@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         /*打开调试信息*/
         yxf.debug(true);
         /*初始化*/
-        yxf.init(getApplicationContext(), " ade3qax24449f80b6", "n6b1dls5b7c40ADEQdr3ab1b3c31386",
+        yxf.init(getApplicationContext(), " yxfAppId", "yxfAppId",
                 new OnInitListener() {
             @Override
             public void onSuccess() {
