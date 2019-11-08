@@ -21,6 +21,9 @@ allprojects {
         maven {  //阿里云远程仓库
             url "http://maven.aliyun.com/nexus/content/repositories/releases"
         }
+        maven {
+            url getProject().rootDir.absolutePath+ File.separator + "repository"
+        }
     }
 }
 

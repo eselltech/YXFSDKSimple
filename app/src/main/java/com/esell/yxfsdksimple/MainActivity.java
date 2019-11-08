@@ -6,10 +6,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.esell.component_common.model.AD;
+import com.esell.component_common.model.OnAdListener;
+import com.esell.component_rtb.RtbRequest;
 import com.esell.component_rtb.RtbSlot;
 import com.esell.yxf.OnInitListener;
 import com.esell.yxf.SlotView;
 import com.esell.yxf.Yxf;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = com.esell.yxfsdksimple.MainActivity.class.getSimpleName();
@@ -24,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         /*打开调试信息*/
         yxf.debug(true);
         /*初始化*/
-        yxf.init(getApplicationContext(), "yxfAppId", "yxfAppKey",
+        yxf.init(getApplicationContext(), " ade3qax24449f80b6", "n6b1dls5b7c40ADEQdr3ab1b3c31386",
                 new OnInitListener() {
             @Override
             public void onSuccess() {
@@ -59,7 +64,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnClick(View view) {
+        /*主动获取普通广告*/
+        yxf.getNormalAdList(new OnAdListener() {
+            @Override
+            public void onAd(List<? extends AD> adList) {
 
+            }
+        });
+        /*主动获取rtb广告*/
+        RtbRequest.request(this, "appId", "appKey", "设备唯一编码", "广告位id", "类型", 1/*数量*/, new OnAdListener() {
+            @Override
+            public void onAd(List<? extends AD> adList) {
+                Log.d(TAG,  "onAd (line 21): "+adList);
+            }
+        });
     }
 
     @Override
