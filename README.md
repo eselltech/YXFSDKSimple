@@ -105,4 +105,23 @@ RtbRequest.request(this, "appId", "appKey", "设备唯一编码", "广告位id",
             }
             
 });
+
+## 注 根目录build.gradle 添加
+
+allprojects {
+
+    repositories {
+    
+        google()
+        
+        jcenter()
+        
+        maven {
+        //阿里云远程仓库
+        
+            url "http://maven.aliyun.com/nexus/content/repositories/releases"
+        }
+    }
+}
+
         
