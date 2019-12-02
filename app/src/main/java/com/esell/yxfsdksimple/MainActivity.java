@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, "onFailed (line 26): code : " + code + ",msg : " + msg);
             }
         });
+        /*报备广告位id*/
+        yxf.report(slotId1, slotId2, slotId3);
         //        自实现配置
         //        ConfigManager configManager = ConfigManager.getInstance();
         //        本地缓存
@@ -74,14 +76,39 @@ public class MainActivity extends AppCompatActivity {
         //        configManager.setDownload();
 
         final SlotView slotView = new SlotView(getApplicationContext());
-        /*配置屏效宝广告*/
-        yxf.rtbConfig("pxbAppId", "pxbAppKey", "唯一编码");
-        /*关联广告位*/
+        /*设置广告位id*/
+        slotView.setYxfSlotId(slotId);
+        /*添加广告位描述*/
+        slotView.setYxfSlotDes("广告位描述");
+        /*rtb关联广告位*/
         yxf.rtbLink(slotView, new RtbSlot[]{new RtbSlot("广告位id", "类型", 1/*数量*/), new RtbSlot(
                 "广告位id", "类型", 1/*数量*/)});
 
         FrameLayout container = findViewById(R.id.container);
         container.addView(slotView);
+
+        //        打开调试信息
+        //        yxf.debug(true);
+
+        //        自实现配置
+
+        //        ConfigManager configManager = ConfigManager.getInstance();
+
+        //        本地缓存
+
+        //        configManager.setCache();
+
+        //        图片加载
+
+        //        configManager.setImageLoad();
+
+        //        网络请求
+
+        //        configManager.setNetRequest();
+
+        //        下载
+
+        //        configManager.setDownload();
     }
 
     public void btnClick(View view) {
