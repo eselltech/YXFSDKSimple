@@ -74,12 +74,17 @@ public class MainActivity extends AppCompatActivity {
         //        configManager.setNetRequest();
         //        下载
         //        configManager.setDownload();
-
+//广告位实例方式1
         final SlotView slotView = new SlotView(getApplicationContext());
         /*设置广告位id*/
         slotView.setYxfSlotId(slotId);
         /*添加广告位描述*/
         slotView.setYxfSlotDes("广告位描述");
+        yxf.link(slotView);
+//广告位实例方式2  不需要link
+//         SlotView slotView = yxf.newSlotView(slotId, "广告位描述");
+
+
         /*rtb关联广告位*/
         yxf.rtbLink(slotView, new RtbSlot[]{new RtbSlot("广告位id", "类型", 1/*数量*/), new RtbSlot(
                 "广告位id", "类型", 1/*数量*/)});
