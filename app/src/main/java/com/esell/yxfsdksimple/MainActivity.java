@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresPermission;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,6 +23,9 @@ import com.esell.yxf.Yxf;
 
 import java.util.List;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = com.esell.yxfsdksimple.MainActivity.class.getSimpleName();
     private Yxf yxf;
@@ -33,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {/*6.0以上申请权限*/
             if (PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE) || PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                Toast.makeText(this, "未获取到存储权限", Toast.LENGTH_SHORT).show();
+                    Manifest.permission.READ_EXTERNAL_STORAGE) || PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) || PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) || PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                Toast.makeText(this, "未获取到所需权限", Toast.LENGTH_SHORT).show();
                 ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE}, 101);
                 return;
             }
@@ -44,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         init();
 
     }
-
+    @RequiresPermission(anyOf = {ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION})
     private void init() {
         /*获取实例*/
         yxf = Yxf.getInstance();
@@ -56,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess() {
                 /*获取设备编号*/
                 String deviceNum = yxf.getDeviceNum();
-                Log.i(TAG, "onSuccess (line 20): "+deviceNum);
+                Log.i(TAG, "onSuccess (line 20): " + deviceNum);
             }
 
             @Override
@@ -77,15 +81,15 @@ public class MainActivity extends AppCompatActivity {
         //        configManager.setNetRequest();
         //        下载
         //        configManager.setDownload();
-//广告位实例方式1
+        //广告位实例方式1
         final SlotView slotView = new SlotView(getApplicationContext());
         /*设置广告位id*/
         slotView.setYxfSlotId(slotId);
         /*添加广告位描述*/
         slotView.setYxfSlotDes("广告位描述");
         yxf.link(slotView);
-//广告位实例方式2  不需要link
-//         SlotView slotView = yxf.newSlotView(slotId, "广告位描述");
+        //广告位实例方式2  不需要link
+        //         SlotView slotView = yxf.newSlotView(slotId, "广告位描述");
 
 
         /*rtb关联广告位*/
