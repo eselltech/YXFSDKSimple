@@ -54,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
         yxf.init(getApplicationContext(), " yxfAppId", "yxfAppId", new OnInitListener() {
             @Override
             public void onSuccess() {
-                Log.i(TAG, "onSuccess (line 20): ");
+                /*获取设备编号*/
+                String deviceNum = yxf.getDeviceNum();
+                Log.i(TAG, "onSuccess (line 20): "+deviceNum);
             }
 
             @Override
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, "onFailed (line 26): code : " + code + ",msg : " + msg);
             }
         });
+
         /*报备广告位id*/
         yxf.report(slotId1, slotId2, slotId3);
         //        自实现配置
