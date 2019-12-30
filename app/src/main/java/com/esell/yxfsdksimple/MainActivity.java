@@ -95,11 +95,6 @@ public class MainActivity extends AppCompatActivity {
         //广告位实例方式2  不需要link
         //         SlotView slotView = yxf.newSlotView(slotId, "广告位描述");
 
-
-        /*rtb关联广告位*/
-        yxf.rtbLink(slotView, new RtbSlot[]{new RtbSlot("广告位id", "类型", 1/*数量*/), new RtbSlot(
-                "广告位id", "类型", 1/*数量*/)});
-
         FrameLayout container = findViewById(R.id.container);
         container.addView(slotView);
 
@@ -133,14 +128,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAd(List<? extends AD> adList) {
 
-            }
-        });
-        /*主动获取rtb广告*/
-        RtbRequest.request(this, "appId", "appKey", "设备唯一编码", "广告位id", "类型", 1/*数量*/,
-                new OnAdListener() {
-            @Override
-            public void onAd(List<? extends AD> adList) {
-                Log.d(TAG, "onAd (line 21): " + adList);
             }
         });
     }

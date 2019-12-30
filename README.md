@@ -67,9 +67,6 @@
         slotView.setYxfSlotId(slotId);
         /*添加广告位描述*/
         slotView.setYxfSlotDes("广告位描述");
-        /*rtb关联广告位*/
-        yxf.rtbLink(slotView, new RtbSlot[]{new RtbSlot("广告位id", "类型", 1/*数量*/), new RtbSlot(
-                "广告位id", "类型", 1/*数量*/)});
         
 ## 可选操作
 
@@ -107,16 +104,10 @@
             }
         });
         
-        /*主动获取rtb广告*/
-        RtbRequest.request(this, "appId", "appKey", "设备唯一编码", "广告位id", "类型", 1/*数量*/,
-                new OnAdListener() {
-            @Override
-            public void onAd(List<? extends AD> adList) {
-                Log.d(TAG, "onAd (line 21): " + adList);
-            }
-        });
 # 3、release
 
+    0.1.3 
+        1、去除rtb相关
     0.1.2 
         1、添加定位上报
     0.1.1 
