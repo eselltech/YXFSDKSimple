@@ -15,8 +15,6 @@ import android.widget.Toast;
 
 import com.esell.component_common.model.AD;
 import com.esell.component_common.model.OnAdListener;
-import com.esell.component_rtb.RtbRequest;
-import com.esell.component_rtb.RtbSlot;
 import com.esell.yxf.OnInitListener;
 import com.esell.yxf.SlotView;
 import com.esell.yxf.Yxf;
