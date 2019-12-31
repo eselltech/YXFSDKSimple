@@ -118,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
         //        下载
 
         //        configManager.setDownload();
+
+        //        上报广告下载状态
+        //        yxf.reportDownloadStatus(ad);
     }
 
     public void btnClick(View view) {
