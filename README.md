@@ -105,6 +105,8 @@
         });
         
 # 3、release
+    0.1.5
+        1、OkHttpRequestImp$CallbackAdapter$run()$e.toString() 空指针 修复
     0.1.4
         1、添加广告下载状态方法
     0.1.3 
