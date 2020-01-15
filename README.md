@@ -105,6 +105,8 @@
         });
         
 # 3、release
+    0.1.6
+        1、初始化内部逻辑添加位置信息
     0.1.5
         1、OkHttpRequestImp$CallbackAdapter$run()$e.toString() 空指针 修复
     0.1.4
