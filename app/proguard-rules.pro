@@ -87,7 +87,7 @@
     public *** println(...);
     public *** print(...);
 }
-
+#sdk相关
 -keep class com.esell.** { *; }
 
 #阿里物联网混淆

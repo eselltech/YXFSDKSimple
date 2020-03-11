@@ -127,6 +127,49 @@
         1、修复广告更新后轮播异常
     0.0.9 
         1、添加广告位报备
+# 4、混淆规则
+ 
+    #sdk相关
+    -keep class com.esell.** { *; }
+    #阿里物联网混淆
+    # linkkit API
+    -keep class com.aliyun.alink.**{*;}
+    -keep class com.aliyun.linksdk.**{*;}
+    -dontwarn com.aliyun.**
+    -dontwarn com.alibaba.**
+    -dontwarn com.alipay.**
+    -dontwarn com.ut.**
+    # keep native method
+    -keepclasseswithmembernames class * {
+    native <methods>;
+    }
+    # keep netty
+    -keepattributes Signature,InnerClasses
+    -keepclasseswithmembers class io.netty.** {
+    *;
+    }
+    -dontwarn io.netty.**
+    -dontwarn sun.**
+    # keep mqtt
+    -keep public class org.eclipse.paho.**{*;}
+    # keep fastjson
+    -dontwarn com.alibaba.fastjson.**
+    -keep class com.alibaba.fastjson.**{*;}
+    # keep gson
+    -keep class com.google.gson.** { *;}
+    # keep network core
+    -keep class com.http.**{*;}
+    # keep okhttp
+    -dontwarn okhttp3.**
+    -dontwarn okio.**
+    -dontwarn javax.annotation.**
+    -keep class okio.**{*;}
+    -keep class okhttp3.**{*;}
+    -keep class org.apache.commons.codec.**{*;}
+    ##OSS
+    -keep class com.alibaba.sdk.android.oss.** { *; }
+    -dontwarn okio.**
+    -dontwarn org.apache.commons.codec.binary.**
               
 
         
