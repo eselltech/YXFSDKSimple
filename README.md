@@ -6,6 +6,7 @@
         maven {  //阿里云远程仓库
             url "http://maven.aliyun.com/nexus/content/repositories/releases"
         }
+        maven { url 'https://jitpack.io' }
     }
 ## 添加依赖 
     implementation 'com.esell:yxf:lastVersion'
@@ -106,6 +107,11 @@
         
 # 3、release
 
+    0.2.2
+        1、初始化逻辑优化
+        2、dataHub展现量上报
+        注:需添加新的仓库 maven { url 'https://jitpack.io' }
+    ---
     0.2.0
         1、修复销毁方法空指针
     0.1.9
