@@ -107,7 +107,7 @@
         
 # 3、release
 
-    0.2.2
+    0.2.3
         1、初始化逻辑优化
         2、dataHub展现量上报
         注:需添加新的仓库 maven { url 'https://jitpack.io' }
