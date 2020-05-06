@@ -1,3 +1,35 @@
+# release
+
+    0.2.4
+        1、修复 销毁sdk后 再次进入app不能更新广告问题
+        
+    0.2.3
+        1、初始化逻辑优化
+        2、dataHub展现量上报
+        注:需添加新的仓库 maven { url 'https://jitpack.io' }
+    ---
+    0.2.0
+        1、修复销毁方法空指针
+    0.1.9
+        1、网络请求原生实现
+    ---
+    0.1.6
+        1、初始化内部逻辑添加位置信息
+    0.1.5
+        1、OkHttpRequestImp$CallbackAdapter$run()$e.toString() 空指针 修复
+    0.1.4
+        1、添加广告下载状态方法
+    0.1.3 
+        1、去除rtb相关
+    0.1.2 
+        1、添加定位上报
+    0.1.1 
+        1、添加获取设备编号方法
+    0.1.0 
+        1、修复广告更新后轮播异常
+    0.0.9 
+        1、添加广告位报备
+
 # 1、配置
 ## 添加仓库 
     repositories {
@@ -9,7 +41,7 @@
         maven { url 'https://jitpack.io' }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:lastVersion'
+    implementation 'com.esell:yxf:0.2.4'
 ## 使用java8
     compileOptions {
         sourceCompatibility 1.8
@@ -105,38 +137,7 @@
             }
         });
         
-# 3、release
-
-    0.2.4
-        1、修复 销毁sdk后 再次进入app不能更新广告问题
-        
-    0.2.3
-        1、初始化逻辑优化
-        2、dataHub展现量上报
-        注:需添加新的仓库 maven { url 'https://jitpack.io' }
-    ---
-    0.2.0
-        1、修复销毁方法空指针
-    0.1.9
-        1、网络请求原生实现
-    ---
-    0.1.6
-        1、初始化内部逻辑添加位置信息
-    0.1.5
-        1、OkHttpRequestImp$CallbackAdapter$run()$e.toString() 空指针 修复
-    0.1.4
-        1、添加广告下载状态方法
-    0.1.3 
-        1、去除rtb相关
-    0.1.2 
-        1、添加定位上报
-    0.1.1 
-        1、添加获取设备编号方法
-    0.1.0 
-        1、修复广告更新后轮播异常
-    0.0.9 
-        1、添加广告位报备
-# 4、混淆规则
+# 3、混淆规则
  
     #sdk相关
     -keep class com.esell.** { *; }
