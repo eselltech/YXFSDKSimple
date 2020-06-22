@@ -1,5 +1,7 @@
 # release
 
+    0.2.8
+        1、OkDownloadListener ClassCastException 
     0.2.7
         1、添加http前缀网络请求支持
     0.2.6
