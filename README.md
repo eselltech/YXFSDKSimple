@@ -1,5 +1,7 @@
 # release
 
+    0.2.9
+        1、修改文件下载完成判断逻辑 
     0.2.8
         1、OkDownloadListener ClassCastException 
     0.2.7
