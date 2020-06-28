@@ -1,5 +1,8 @@
 # release
 
+    0.3.0
+        1、init逻辑优化 
+        2、广告获取逻辑优化
     0.2.9
         1、修改文件下载完成判断逻辑 
     0.2.8
@@ -50,7 +53,7 @@
         maven { url 'https://jitpack.io' }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:0.2.4'
+    implementation 'com.esell:yxf:0.3.0'
 ## 使用java8
     compileOptions {
         sourceCompatibility 1.8
