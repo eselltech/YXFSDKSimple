@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         yxf = Yxf.getInstance();
         /*打开调试信息*/
         yxf.debug(true);
+        /*报备广告位id*/
+        yxf.report(slotId1, slotId2, slotId3);
         /*初始化*/
         yxf.init(getApplicationContext(), " yxfAppId", "yxfAppId", new OnInitListener() {
             @Override
@@ -71,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*报备广告位id*/
-        yxf.report(slotId1, slotId2, slotId3);
         //        自实现配置
         //        ConfigManager configManager = ConfigManager.getInstance();
         //        本地缓存
@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
         yxf.link(slotView);
         //广告位实例方式2  不需要link
         //         SlotView slotView = yxf.newSlotView(slotId, "广告位描述");
-
         FrameLayout container = findViewById(R.id.container);
         container.addView(slotView);
 
