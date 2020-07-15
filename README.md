@@ -1,5 +1,6 @@
 # release
-
+    0.3.1
+        1、支持自定义广告处理 详情参看doc
     0.3.0
         1、init逻辑优化 
         2、广告获取逻辑优化
@@ -91,6 +92,8 @@
         yxf = Yxf.getInstance();
         /*打开调试信息*/
         yxf.debug(true);
+        /*报备广告位id*/
+        yxf.report(slotId1,slotId2,slotId3);
         /*初始化*/
         yxf.init(getApplicationContext(), " yxfAppId", "yxfAppId", new OnInitListener() {
             @Override
@@ -103,8 +106,6 @@
                 Log.e(TAG, "onFailed (line 26): code : " + code + ",msg : " + msg);
             }
         });
-        /*报备广告位id*/
-        yxf.report(slotId1,slotId2,slotId3);
         
         <!--添加广告位-->
         final SlotView slotView = new SlotView(getApplicationContext());
@@ -140,14 +141,6 @@
         //        下载
 
         //        configManager.setDownload();               
-                
-        /*主动获取普通广告*/
-        yxf.getNormalAdList(new OnAdListener() {
-            @Override
-            public void onAd(List<? extends AD> adList) {
-                Log.d(TAG, "onAd (line 21): " + adList);
-            }
-        });
         
 # 3、混淆规则
  
