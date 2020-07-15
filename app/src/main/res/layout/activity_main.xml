@@ -1,19 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:id="@+id/container"
+<LinearLayout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_red_light"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-
     <Button
-        android:id="@+id/ddd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="btnClick"
+        android:onClick="getDeviceNum"
+        android:text="获取设备编号"
         />
 
-</FrameLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getNormalAdList"
+        android:text="获取广告列表"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="addCustomList"
+        android:text="添加自定义广告"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="cleanCustomList"
+        android:text="清除自定义广告"
+        />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
