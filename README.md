@@ -1,4 +1,7 @@
 # release
+    0.3.4
+        1、已有trackUrl上报路径的广告 不再dataHub重复上报
+        2、废弃yxf.disableDataHubReport()方法,使用setSupportDataHubReport(boolean support)代替
     0.3.3
         1、网络请求响应json数据解析异常处理
     0.3.2
