@@ -61,7 +61,7 @@
         maven { url 'https://jitpack.io' }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:0.3.0'
+    implementation 'com.esell:yxf:0.3.4'
 ## 使用java8
     compileOptions {
         sourceCompatibility 1.8
