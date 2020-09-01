@@ -67,6 +67,15 @@
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
+    public class MyApp extends Application {
+        @Override
+        protected void attachBaseContext(Context base) {
+            super.attachBaseContext(base);
+            MultiDex.install(this);
+            Yxf.getInstance().attachBaseContext(base);
+        }
+    }
+
     android {
         ...
         defaultConfig {
