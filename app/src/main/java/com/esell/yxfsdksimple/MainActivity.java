@@ -1,19 +1,16 @@
 package com.esell.yxfsdksimple;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresPermission;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import com.esell.component_common.YLog;
-import com.esell.component_common.model.AD;
+import com.esell.component_log.Log;
+import com.esell.component_widget.AD;
 import com.esell.yxf.CustomAD;
 import com.esell.yxf.CustomADSet;
 import com.esell.yxf.OnInitListener;
@@ -22,6 +19,11 @@ import com.esell.yxf.Yxf;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresPermission;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -42,10 +44,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * TODO: 设置参数
      */
-    public static final String APP_ID = ;
-    public static final String APP_KEY = ;
-    public static final int SLOT_ID = ;
+    public static final String APP_ID = "ade3qax24449f80b6";
+    public static final String APP_KEY = "n6b1dls5b7c40ADEQdr3ab1b3c31386";
+    public static final int SLOT_ID = 21465;
 
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,17 +78,17 @@ public class MainActivity extends AppCompatActivity {
         /*报备广告位id*/
         yxf.report(SLOT_ID);
         /*初始化*/
-        yxf.init(getApplicationContext(), APP_ID, APP_KEY, new OnInitListener() {
+        yxf.init(getApplication(), APP_ID, APP_KEY, new OnInitListener() {
             @Override
             public void onSuccess() {
                 /*获取设备编号*/
                 String deviceNum = yxf.getDeviceNum();
-                YLog.i("onSuccess (line 20): " + deviceNum);
+                Log.i("onSuccess (line 20): " + deviceNum);
             }
 
             @Override
             public void onFailed(int code, String msg) {
-                YLog.e("onFailed (line 26): code : " + code + ",msg : " + msg);
+                Log.e("onFailed (line 26): code : " + code + ",msg : " + msg);
             }
         });
         //广告位实例方式2  不需要link
@@ -145,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
         yxf.destroy();
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
@@ -156,11 +160,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getDeviceNum(View view) {
-        YLog.d("deviceNum : " + yxf.getDeviceNum());
+        Log.d("deviceNum : " + yxf.getDeviceNum());
     }
 
     public void getNormalAdList(View view) {
-        yxf.getNormalAdList(adList -> YLog.d(adList == null ? "null" : adList.toString()));
+        yxf.getNormalAdList(adList -> Log.d(adList == null ? "null" : adList.toString()));
     }
 
     public void addCustomList(View view) {
@@ -172,12 +176,12 @@ public class MainActivity extends AppCompatActivity {
         }
         CustomADSet customADSet = yxf.getCustomADSet();
         customADSet.addCustomList(list);
-        YLog.d("customADSet.size : " + customADSet.size());
+        Log.d("customADSet.size : " + customADSet.size());
     }
 
     public void cleanCustomList(View view) {
         CustomADSet customADSet = yxf.getCustomADSet();
         customADSet.clear();
-        YLog.d("customADSet.size : " + customADSet.size());
+        Log.d("customADSet.size : " + customADSet.size());
     }
 }
