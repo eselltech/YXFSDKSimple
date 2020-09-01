@@ -1,5 +1,5 @@
 # release
-    1.0.0
+    1.0.2
         1、迁移到androidX
         2、模块整理、 一些类位置更改、删除
     0.3.4
@@ -63,7 +63,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.0.0'
+    implementation 'com.esell:yxf:1.0.2'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml

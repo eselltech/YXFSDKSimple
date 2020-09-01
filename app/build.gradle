@@ -10,14 +10,33 @@ android {
         versionName "1.0"
         multiDexEnabled true
     }
+    //签名配置
+    signingConfigs {
+        release {
+            keyAlias 'yxfsdk'
+            keyPassword '123456'
+            storePassword '123456'
+            storeFile file('../yxfsdk.jks')
+            v2SigningEnabled false
+        }
+        debug {
+            keyAlias 'yxfsdk'
+            keyPassword '123456'
+            storePassword '123456'
+            storeFile file('../yxfsdk.jks')
+            v2SigningEnabled false
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        debug {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        debug{
+            signingConfig signingConfigs.debug
+            minifyEnabled false
         }
     }
 
@@ -30,11 +49,18 @@ android {
         pickFirst  'lib/x86/libc++_shared.so'
         pickFirst  'lib/armeabi-v7a/libc++_shared.so'
     }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+            jniLibs.srcDir 'libs'
+            jni.srcDirs = []
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:1.2.0"
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.esell:yxf:1.0.0'
+    implementation 'com.esell:yxf:1.0.2'
 }
