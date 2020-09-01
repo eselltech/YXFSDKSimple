@@ -1,4 +1,7 @@
 # release
+    1.0.0
+        1、迁移到androidX
+        2、模块整理、 一些类位置更改、删除
     0.3.4
         1、已有trackUrl上报路径的广告 不再dataHub重复上报
         2、废弃yxf.disableDataHubReport()方法,使用setSupportDataHubReport(boolean support)代替
@@ -58,27 +61,30 @@
         maven {  //阿里云远程仓库
             url "http://maven.aliyun.com/nexus/content/repositories/releases"
         }
-        maven { url 'https://jitpack.io' }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:0.3.4'
-## 使用java8
-    compileOptions {
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
-    }
-## 由于物联网代码方法比较多需自行分包配置
-    1、implementation 'com.android.support:multidex:1.0.3'
-    2、android {
+    implementation 'com.esell:yxf:1.0.0'
+## 必要配置
+    implementation 'androidx.multidex:multidex:2.0.1'
+    自定义Application 添加到 AndroidManifest.xml
+    android {
         ...
         defaultConfig {
             ...
             multiDexEnabled true
             ...
         }
-       }
-    3、自定义Application 添加到 AndroidManifest.xml
 
+        compileOptions {
+            sourceCompatibility 1.8
+            targetCompatibility 1.8
+        }
+        packagingOptions {
+            pickFirst  'lib/arm64-v8a/libc++_shared.so'
+            pickFirst  'lib/x86/libc++_shared.so'
+            pickFirst  'lib/armeabi-v7a/libc++_shared.so'
+        }
+    }
 
 ## 添加权限
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
