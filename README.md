@@ -1,4 +1,6 @@
 # release
+    1.0.3
+        1、添加素材下载进度监听 Yxf#setDownloadListener(DownloadListener)
     1.0.2
         1、迁移到androidX
         2、模块整理、 一些类位置更改、删除
