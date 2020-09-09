@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import com.esell.component_common.download.DownloadListener;
 import com.esell.component_log.Log;
 import com.esell.component_widget.AD;
 import com.esell.yxf.CustomAD;
@@ -18,7 +17,6 @@ import com.esell.yxf.OnInitListener;
 import com.esell.yxf.SlotView;
 import com.esell.yxf.Yxf;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,12 +78,12 @@ public class MainActivity extends AppCompatActivity {
         /*报备广告位id*/
         yxf.report(SLOT_ID);
         /*素材下载进度监听*/
-        yxf.setDownloadListener(new DownloadListener() {
-            @Override
-            public void onCompleted(boolean success, File file, int code, String describe) {
-
-            }
-        });
+//        yxf.setDownloadListener(new DownloadListener() {
+//            @Override
+//            public void onCompleted(boolean success, File file, int code, String describe) {
+//
+//            }
+//        });
 //        yxf.setDownloadListener(new ProgressDownloadListener(){
 //            @Override
 //            public void onStart(String url) {

@@ -1,4 +1,6 @@
 # release
+    1.0.4
+        1、修复视频素材不下载问题
     1.0.3
         1、添加素材下载进度监听 Yxf#setDownloadListener(DownloadListener)
     1.0.2
