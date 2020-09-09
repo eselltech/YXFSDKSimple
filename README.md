@@ -67,7 +67,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.0.3'
+    implementation 'com.esell:yxf:1.0.4'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
