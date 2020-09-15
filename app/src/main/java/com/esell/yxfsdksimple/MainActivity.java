@@ -77,29 +77,6 @@ public class MainActivity extends AppCompatActivity {
         yxf.debug(true);
         /*报备广告位id*/
         yxf.report(SLOT_ID);
-        /*素材下载进度监听*/
-//        yxf.setDownloadListener(new DownloadListener() {
-//            @Override
-//            public void onCompleted(boolean success, File file, int code, String describe) {
-//
-//            }
-//        });
-//        yxf.setDownloadListener(new ProgressDownloadListener(){
-//            @Override
-//            public void onStart(String url) {
-//                super.onStart(url);
-//            }
-//
-//            @Override
-//            public void onProgress(String url, long total, long current) {
-//                super.onProgress(url, total, current);
-//            }
-//
-//            @Override
-//            public void onEnd(String url, boolean success, File file, int code, String describe) {
-//                super.onEnd(url, success, file, code, describe);
-//            }
-//        });
         /*初始化*/
         yxf.init(getApplication(), APP_ID, APP_KEY, new OnInitListener() {
             @Override
@@ -114,6 +91,31 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("onFailed (line 26): code : " + code + ",msg : " + msg);
             }
         });
+        /*素材下载进度监听 init方法后使用*/
+        //                yxf.setDownloadListener(new DownloadListener() {
+        //                    @Override
+        //                    public void onCompleted(boolean success, File file, int code,
+        //                    String describe) {
+        //
+        //                    }
+        //                });
+        //                yxf.setDownloadListener(new ProgressDownloadListener(){
+        //                    @Override
+        //                    public void onStart(String url) {
+        //                        super.onStart(url);
+        //                    }
+        //
+        //                    @Override
+        //                    public void onProgress(String url, long total, long current) {
+        //                        super.onProgress(url, total, current);
+        //                    }
+        //
+        //                    @Override
+        //                    public void onEnd(String url, boolean success, File file, int code,
+        //                    String describe) {
+        //                        super.onEnd(url, success, file, code, describe);
+        //                    }
+        //                });
         //广告位实例方式2  不需要link
         SlotView slotView = yxf.newSlotView(SLOT_ID, "广告位描述");
 
