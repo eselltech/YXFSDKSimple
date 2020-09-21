@@ -1,4 +1,4 @@
-# release
+# androidX release
     1.0.5
         1、添加方法 主动清理不在广告列表内的素材 Yxf#cleanUpMaterial()
     1.0.4
@@ -8,6 +8,11 @@
     1.0.2
         1、迁移到androidX
         2、模块整理、 一些类位置更改、删除
+# appCompat release
+    0.3.5
+        1、修复下载框架异常
+        2、添加下载监听Yxf#setDownloadListener(DownloadListener)
+        3、添加方法 主动清理不在广告列表内的素材 Yxf#cleanUpMaterial()
     0.3.4
         1、已有trackUrl上报路径的广告 不再dataHub重复上报
         2、废弃yxf.disableDataHubReport()方法,使用setSupportDataHubReport(boolean support)代替
