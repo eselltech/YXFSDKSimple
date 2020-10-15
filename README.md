@@ -1,6 +1,10 @@
 # androidX release
-    1.0.6
-        1、屏效宝广告监播地址补报处理
+    1.0.7
+        1、CarouselView 添加播放方式配置方法
+             {@link com.esell.component_widget.CarouselView#setDefVideoType(int)}
+             {@link com.esell.component_widget.VideoViewCompat#WHICH_TEXTURE_VIEW}
+             {@link com.esell.component_widget.VideoViewCompat#WHICH_VIDEO_VIEW}
+        2、屏效宝广告监播地址补报处理
     1.0.5
         1、添加方法 主动清理不在广告列表内的素材 Yxf#cleanUpMaterial()
     1.0.4
@@ -76,7 +80,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.0.6'
+    implementation 'com.esell:yxf:1.0.7'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
