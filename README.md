@@ -1,4 +1,7 @@
 # androidX release
+    1.0.8
+        1、修复1.0.7版本广告未设置监播地址导致只能播放一个广告的BUG
+        2、添加日播放次数上限方法{@link com.esell.yxf.NormalAD#getDayPlayNum()}
     1.0.7
         1、CarouselView 添加播放方式配置方法
              {@link com.esell.component_widget.CarouselView#setDefVideoType(int)}
