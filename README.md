@@ -5,6 +5,16 @@
              {@link com.esell.component_widget.VideoViewCompat#WHICH_TEXTURE_VIEW}
              {@link com.esell.component_widget.VideoViewCompat#WHICH_VIDEO_VIEW}
         2、屏效宝广告监播地址补报处理
+             {@link com.esell.yxf.PXBReportWork#report(Application, int)}}
+             {@link com.esell.yxf.PXBReportWork#saveReportFailedItem(AD)}
+             sdk默认已调用report方法.如使用SlotView 无需任何操作,
+             如未使用SlotView,自行在屏效宝广告监播上报失败后使用saveReportFailedItem方法保存即可.
+             代码示例
+             if (trackUrl.startsWith(PXBReportWork.PXB_URL)) {
+                    PXBReportWork.saveReportFailedItem(ad);
+                 }
+                 
+             
     1.0.5
         1、添加方法 主动清理不在广告列表内的素材 Yxf#cleanUpMaterial()
     1.0.4
