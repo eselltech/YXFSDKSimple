@@ -1,4 +1,4 @@
-# 注意 2020/10/21 OSS出现编译异常 Failed to resolve: oss-android-sdk-2.9.5 [oss issues](https://github.com/aliyun/aliyun-oss-android-sdk/issues/243)
+# 注意 2020/10/21 1.0.9版本以下 OSS出现编译异常 Failed to resolve: oss-android-sdk-2.9.5 [oss issues](https://github.com/aliyun/aliyun-oss-android-sdk/issues/243)
         
         使用指定版本修复
         api 'com.aliyun.dpa:oss-android-sdk:2.9.4'
@@ -7,6 +7,9 @@
         }
         
 # androidX release
+    1.0.9
+        1、指定使用阿里oss 2.9.4版本
+        2、添加Web广告支持
     1.0.8
         1、修复1.0.7版本广告未设置监播地址导致只能播放一个广告的BUG
         2、添加日播放次数上限方法{@link com.esell.yxf.NormalAD#getDayPlayNum()}
