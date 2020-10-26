@@ -1,4 +1,4 @@
-# 注意 2020/10/21 1.0.9版本以下 OSS出现编译异常 Failed to resolve: oss-android-sdk-2.9.5 [oss issues](https://github.com/aliyun/aliyun-oss-android-sdk/issues/243)
+# 注意 2020/10/21 yxf-1.0.9 版本以下 OSS出现编译异常 Failed to resolve: oss-android-sdk-2.9.5 [oss issues](https://github.com/aliyun/aliyun-oss-android-sdk/issues/243)
         
         使用指定版本修复
         api 'com.aliyun.dpa:oss-android-sdk:2.9.4'
@@ -104,7 +104,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.0.7'
+    implementation 'com.esell:yxf:1.0.9'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
