@@ -7,6 +7,8 @@
         }
         
 # androidX release
+    1.1.0
+        1、广告添加投放周期限制
     1.0.9
         1、指定使用阿里oss 2.9.4版本
         2、添加Web广告支持
@@ -104,7 +106,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.0.9'
+    implementation 'com.esell:yxf:1.1.0'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
