@@ -16,6 +16,7 @@ import com.esell.yxf.CustomADSet;
 import com.esell.yxf.OnInitListener;
 import com.esell.yxf.SlotView;
 import com.esell.yxf.Yxf;
+import com.esell.yxf.remote.OnDefRemoteControlListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("onFailed (line 26): code : " + code + ",msg : " + msg);
             }
         });
+        /*设置远程控制监听*/
+        yxf.setOnRemoteControlListener(new OnDefRemoteControlListener());
+
         /*素材下载进度监听 init方法后使用*/
         //                yxf.setDownloadListener(new DownloadListener() {
         //                    @Override

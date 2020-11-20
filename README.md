@@ -7,6 +7,16 @@
         }
         
 # androidX release
+    1.1.1
+        1、dataHub上报取消TrackUrl限制、扩容分片
+        2、支持基本控制监听
+            /**
+             * see{@link com.esell.yxf.Yxf#setOnRemoteControlListener(OnRemoteControlListener)}
+             * see{@link com.esell.yxf.remote.OnRemoteControlListener}
+             * see{@link com.esell.yxf.remote.OnSimpleRemoteControlListener}
+             * see{@link com.esell.yxf.remote.OnDefRemoteControlListener}
+             * see{@link com.esell.yxf.remote.RemoteControlUtils}
+             */
     1.1.0
         1、广告添加投放周期限制
     1.0.9
@@ -106,7 +116,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.1.0'
+    implementation 'com.esell:yxf:1.1.1'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
