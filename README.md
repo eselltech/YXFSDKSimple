@@ -1,3 +1,14 @@
+# 注意 WorkManager 偶现异常 IllegalStateException("WorkManager is not initialized properly")
+         Application 实现 Configuration.Provider接口
+         class MyApplication extends Application implements Configuration.Provider {
+                @Override
+                public Configuration getWorkManagerConfiguration() {
+                    return Configuration.Builder()
+                            .setMinimumLoggingLevel(android.util.Log.INFO)
+                            .build();
+                }
+            }
+    
 # 注意 2020/10/21 yxf-1.0.9 版本以下 OSS出现编译异常 Failed to resolve: oss-android-sdk-2.9.5 [oss issues](https://github.com/aliyun/aliyun-oss-android-sdk/issues/243)
         
         使用指定版本修复
