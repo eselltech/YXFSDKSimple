@@ -18,6 +18,8 @@
         }
         
 # androidX release
+    1.1.2
+        1、修复8.0版本以上启动服务异常
     1.1.1
         1、dataHub上报取消TrackUrl限制、扩容分片
         2、支持基本控制监听
@@ -127,7 +129,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.1.1'
+    implementation 'com.esell:yxf:1.1.2'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
