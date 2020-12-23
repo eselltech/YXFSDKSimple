@@ -18,6 +18,9 @@
         }
         
 # androidX release
+    1.1.3
+        1、去除百度定位相关
+        1、去除xLog相关
     1.1.2
         1、修复8.0版本以上启动服务异常
     1.1.1
@@ -129,7 +132,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.1.2'
+    implementation 'com.esell:yxf:1.1.3'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
