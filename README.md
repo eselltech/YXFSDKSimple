@@ -67,6 +67,14 @@
         1、迁移到androidX
         2、模块整理、 一些类位置更改、删除
 # appCompat release
+
+    api 'com.aliyun.dpa:oss-android-sdk:2.9.4'
+    api 'com.github.eselltech:component_datahub:0.2.2'
+    implementation ('com.esell:yxf:0.3.5'){
+        exclude(group: 'com.aliyun.dpa', module: 'oss-android-sdk')
+        exclude(group: 'com.github.eselltech', module: 'component_datahub')
+    }
+
     0.3.5
         1、修复下载框架异常
         2、添加下载监听Yxf#setDownloadListener(DownloadListener)
