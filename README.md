@@ -18,6 +18,8 @@
         }
         
 # androidX release
+    1.1.4
+        1、修复 在无广告播放的情况下 发布未到投放周期的广告 不播放问题
     1.1.3
         1、去除百度定位相关
         1、去除xLog相关
@@ -140,7 +142,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.1.3'
+    implementation 'com.esell:yxf:1.1.4'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
