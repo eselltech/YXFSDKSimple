@@ -18,6 +18,11 @@
         }
         
 # androidX release
+    1.1.5
+        1、添加 根据投放周期自动隐藏广告位方法
+          see{@link com.esell.yxf.Yxf#setVisibility(SlotView, boolean)}
+          see{@link com.esell.yxf.Yxf#setVisibilityAll(boolean)}
+
     1.1.4
         1、修复 在无广告播放的情况下 发布未到投放周期的广告 不播放问题
     1.1.3
