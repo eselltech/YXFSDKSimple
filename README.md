@@ -18,6 +18,9 @@
         }
         
 # androidX release
+    1.1.6
+        1、修复没有本地素材情况下 调用cleanUpMaterial()出现的异常
+        2、mmkv IllegalStateException 异常 添加补偿机制
     1.1.5
         1、添加 根据投放周期自动隐藏广告位方法
           see{@link com.esell.yxf.Yxf#setVisibility(SlotView, boolean)}
@@ -147,7 +150,7 @@
         }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.1.5'
+    implementation 'com.esell:yxf:1.1.6'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml

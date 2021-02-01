@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * TODO: 设置参数
      */
-    public static final String APP_ID = ;
-    public static final String APP_KEY = ;
-    public static final int SLOT_ID = ;
+    public static final String APP_ID = "ade3qax24449f80b6";
+    public static final String APP_KEY = "n6b1dls5b7c40ADEQdr3ab1b3c31386";
+    public static final int SLOT_ID = 21465;
 
     @SuppressLint("MissingPermission")
     @Override
