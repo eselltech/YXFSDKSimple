@@ -2,9 +2,12 @@ package com.esell.yxfsdksimple;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.hardware.display.DisplayManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -19,7 +22,9 @@ import com.esell.yxf.Yxf;
 import com.esell.yxf.remote.OnDefRemoteControlListener;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresPermission;
@@ -54,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        if (havePresentation(getApplicationContext())) {
+            findViewById(R.id.displayPresentation).setVisibility(View.VISIBLE);
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {/*6.0以上申请权限*/
             if (PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this,
                     Manifest.permission.READ_EXTERNAL_STORAGE) || PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) || PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) || PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
@@ -72,12 +79,20 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresPermission(anyOf = {ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION})
     private void init() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            havePresentation(getApplicationContext());
+        }
         /*获取实例*/
         yxf = Yxf.getInstance();
         /*打开调试信息*/
         yxf.debug(true);
+        int[] reportArr = new int[ARRAYS.length + 1];
+
+        /*组合上报广告位id*/
+        System.arraycopy(ARRAYS, 0, reportArr, 0, ARRAYS.length);
+        reportArr[reportArr.length - 1] = SLOT_ID;
         /*报备广告位id*/
-        yxf.report(SLOT_ID);
+        yxf.report(reportArr);
         /*初始化*/
         yxf.init(getApplication(), APP_ID, APP_KEY, new OnInitListener() {
             @Override
@@ -173,6 +188,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        if (!set.isEmpty()) {
+            for(PresentationImp presentationImp : set) {
+                presentationImp.dismiss();
+            }
+            set.clear();
+        }
         super.onDestroy();
         yxf.destroy();
     }
@@ -212,5 +233,52 @@ public class MainActivity extends AppCompatActivity {
         CustomADSet customADSet = yxf.getCustomADSet();
         customADSet.clear();
         Log.d("customADSet.size : " + customADSet.size());
+    }
+
+    /**
+     * 是否有附屏
+     *
+     * @param context
+     */
+    public boolean havePresentation(Context context) {
+        DisplayManager displayManager = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            displayManager = (DisplayManager) context.getSystemService(Context.DISPLAY_SERVICE);
+            Display[] displays =
+                    displayManager.getDisplays(DisplayManager.DISPLAY_CATEGORY_PRESENTATION);
+            return displays != null && displays.length > 0;
+        }
+        return false;
+    }
+
+
+    /**
+     * 附屏备选 可能多个
+     */
+    public static final int[] ARRAYS = {21464, 21463, 21462, 21461};
+
+    Set<PresentationImp> set = new HashSet<>();
+
+    /**
+     * 展示附屏
+     *
+     * @param view
+     */
+    public void displayPresentation(View view) {
+        DisplayManager displayManager = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            displayManager = (DisplayManager) this.getSystemService(Context.DISPLAY_SERVICE);
+            Display[] displays =
+                    displayManager.getDisplays(DisplayManager.DISPLAY_CATEGORY_PRESENTATION);
+            for (int i = 0; i < displays.length; i++) {
+                if (i < ARRAYS.length) {
+                    SlotView slotView = yxf.newSlotView(ARRAYS[i], "广告位描述");
+                    PresentationImp presentationImp = new PresentationImp(this, displays[i],
+                            slotView);
+                    presentationImp.show();
+                    set.add(presentationImp);
+                }
+            }
+        }
     }
 }
