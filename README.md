@@ -85,6 +85,9 @@
         exclude(group: 'com.github.eselltech', module: 'component_datahub')
     }
 
+    0.3.7
+        1、修复datahub上报失败问题
+    ...
     0.3.5
         1、修复下载框架异常
         2、添加下载监听Yxf#setDownloadListener(DownloadListener)
