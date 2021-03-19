@@ -85,6 +85,8 @@
         exclude(group: 'com.github.eselltech', module: 'component_datahub')
     }
 
+    0.3.8
+        1、缓存获取JsonSyntaxException异常
     0.3.7
         1、修复datahub上报失败问题
     ...
