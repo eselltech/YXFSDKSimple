@@ -9,6 +9,10 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+        ndk {
+            // 设置支持的 SO 库构架('armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64')
+            abiFilters 'armeabi-v7a'
+        }
     }
     //签名配置
     signingConfigs {
