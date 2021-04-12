@@ -1,3 +1,11 @@
+# 20210412 仓库从jcenter 迁移到 jitpack
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+
 # 注意 WorkManager 偶现异常 IllegalStateException("WorkManager is not initialized properly")
          Application 实现 Configuration.Provider接口
          class MyApplication extends Application implements Configuration.Provider {
@@ -18,6 +26,19 @@
         }
         
 # androidX release
+    1.1.8
+        1、迁移到jitpack仓库
+        2、新增日播次数功能
+        3、切换appid自动重新走注册流程
+
+        allprojects {
+                repositories {
+                    ...
+                    maven { url 'https://jitpack.io' }
+                }
+            }
+
+
     1.1.7
         1、广告位设置默认背景色、icon 立即刷新显示
     1.1.6
@@ -155,9 +176,10 @@
         maven {  //阿里云远程仓库
             url "http://maven.aliyun.com/nexus/content/repositories/releases"
         }
+        maven { url 'https://jitpack.io' }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.1.7'
+    implementation 'com.esell:yxf:1.1.8'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
