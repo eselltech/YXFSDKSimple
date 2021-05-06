@@ -1,19 +1,3 @@
-# 20210412 仓库从jcenter 迁移到 jitpack
-    allprojects {
-        repositories {
-            ...
-            maven { url 'https://jitpack.io' }
-        }
-    }
-
-# 注意 2020/10/21 yxf-1.0.9 版本以下 OSS出现编译异常 Failed to resolve: oss-android-sdk-2.9.5 [oss issues](https://github.com/aliyun/aliyun-oss-android-sdk/issues/243)
-        
-        使用指定版本修复
-        api 'com.aliyun.dpa:oss-android-sdk:2.9.4'
-        implementation ('com.esell:yxf:xxx'){
-            exclude(group: 'com.aliyun.dpa', module: 'oss-android-sdk')
-        }
-        
 # androidX release
     1.1.8
         1、迁移到jitpack仓库
