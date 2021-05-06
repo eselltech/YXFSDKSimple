@@ -1,4 +1,6 @@
-# 2x版本
+## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
+## [doc](./doc2.0)
+## 2x版本
     2.0.0-SNAPSHOT 20210506
         1、仓库迁移到 mavenCenter,根目录gradle 添加仓库
             allprojects {
@@ -11,10 +13,6 @@
         3、接入逻辑修改 引入屏、模板、组件概念
         4、支持组件:广告位、固定图片、固定视频、固定文本、时钟、静态网页、浏览器、扫码投屏
         5、支持广告:图片、视频、文本、网站、wps
-
-[混淆](./app/proguard-rules.pro)
-[doc](./doc2.0)
-
 ## 添加仓库
     allprojects {
         repositories {
@@ -78,6 +76,7 @@
         <service
             android:name="com.esell.component_mqtt.EsellMqttService"
             android:process=":mqtt" />
+## [混淆](./app/proguard-rules.pro)
 
 
         
