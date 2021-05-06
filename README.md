@@ -1,5 +1,5 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
-## [doc](./doc2.0)
+## [2xdoc](./doc2x)
 ## 2x版本
     2.0.0-SNAPSHOT 20210506
         1、仓库迁移到 mavenCenter,根目录gradle 添加仓库
