@@ -3,7 +3,7 @@ package com.esell.yxfsdksimple;
 import android.app.Application;
 import android.content.Context;
 
-import com.esell.yxf.Yxf;
+import com.esell.yxf.v2.Yxf;
 
 import androidx.annotation.NonNull;
 import androidx.multidex.MultiDex;
@@ -18,7 +18,7 @@ public class MyApp extends Application implements Configuration.Provider {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
-        Yxf.getInstance().attachBaseContext(base);
+        Yxf.getInstance().attachBaseContext(this);
     }
 
     @NonNull

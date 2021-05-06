@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_light"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -22,27 +21,6 @@
         android:onClick="getNormalAdList"
         android:text="获取广告列表"
         />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="addCustomList"
-        android:text="添加自定义广告"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="cleanCustomList"
-        android:text="清除自定义广告"
-        />
-    <Button
-        android:id="@+id/displayPresentation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="displayPresentation"
-        android:visibility="gone"
-        android:text="显示附屏"
         />
     <FrameLayout
         android:id="@+id/container"
