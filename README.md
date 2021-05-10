@@ -100,6 +100,7 @@
         1、迁移到androidX
         2、模块整理、 一些类位置更改、删除
 # appCompat release
+## [本地仓库](./appCompatRepository)
 
     api 'com.aliyun.dpa:oss-android-sdk:2.9.4'
     api 'com.github.eselltech:component_datahub:0.2.2'
