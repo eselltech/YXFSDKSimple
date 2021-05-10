@@ -21,6 +21,12 @@ public class MyApp extends Application implements Configuration.Provider {
         Yxf.getInstance().attachBaseContext(this);
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Yxf.getInstance().setController(this,new ControllerImp());
+    }
+
     @NonNull
     @Override
     public Configuration getWorkManagerConfiguration() {

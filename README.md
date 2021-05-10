@@ -1,6 +1,10 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
 ## [2xdoc](./doc2x)
 ## 2x版本
+    20210510
+        1、支持bp下发基础控制、定时开关机、远程截屏、固件升级、音量策略、亮度策略、下载策略
+            {@link Yxf#setController(Application, IController)}
+            
     2.0.0-SNAPSHOT 20210506
         1、仓库迁移到 mavenCenter,根目录gradle 添加仓库
             allprojects {
