@@ -18,12 +18,13 @@ public class MyApp extends Application implements Configuration.Provider {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
-        Yxf.getInstance().attachBaseContext(this);
+
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        Yxf.getInstance().applicationOnCreate(this);
         Yxf.getInstance().setController(this,new ControllerImp());
     }
 

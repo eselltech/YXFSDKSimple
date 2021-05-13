@@ -1,6 +1,10 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
 ## [2xdoc](./doc2x)
 ## 2x版本
+
+    20210512
+        1、支持运营策略:日志缓存时长、素材缓存时长、展现量离线缓存时长、展现量上报周期、播放类型、播放组件、素材显示类型、屏幕旋转
+
     20210510
         1、支持bp下发基础控制、定时开关机、远程截屏、固件升级、音量策略、亮度策略、下载策略
             {@link Yxf#setController(Application, IController)}
