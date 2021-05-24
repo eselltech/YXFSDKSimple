@@ -1,7 +1,8 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
 ## [2xdoc](./doc2x)
 ## 2x版本
-
+    20210524
+        1、支持倒计时组件、混合广告
     20210518
         1、支持天气组件、网络信号
     20210513
