@@ -26,6 +26,22 @@
         }
         
 # androidX release
+    1.1.9
+        1、迁移到maven仓库
+            根目录gradle 添加
+                    allprojects {
+                        repositories {
+                            ...
+                            maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
+                        }
+                    }
+
+             app gradle添加
+             implementation 'io.github.eselltech:yxf:1.1.9'
+
+        2、新增物联网连接成功监听 {@link com.esell.yxf.Yxf#addOnConnectSuccessListener(SupportMqtt.OnConnectSuccessListener)}
+        3、新增上报位置信息方法 {@link com.esell.yxf.Yxf#publishLocation(double, double)}
+
     1.1.8
         1、迁移到jitpack仓库
         2、新增日播次数功能
@@ -177,10 +193,10 @@
         maven {  //阿里云远程仓库
             url "http://maven.aliyun.com/nexus/content/repositories/releases"
         }
-        maven { url 'https://jitpack.io' }
+        maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
     }
 ## 添加依赖 
-    implementation 'com.esell:yxf:1.1.8'
+    implementation 'io.github.eselltech:yxf:1.1.9'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
     自定义Application 添加到 AndroidManifest.xml
