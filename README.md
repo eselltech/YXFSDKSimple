@@ -26,6 +26,9 @@
         }
         
 # androidX release
+    1.2.0
+        1、添加人脸数据记录公开方法
+                  {@link com.esell.yxf.Yxf#noteFace(int, int, String, int)}
     1.1.9
         1、迁移到maven仓库
             根目录gradle 添加
