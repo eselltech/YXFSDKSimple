@@ -1,6 +1,9 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
 ## [2xdoc](./doc2x)
 ## 2x版本
+    20210623
+        1、添加人脸数据记录公开方法
+        {@link com.esell.yxf.v2.Yxf#noteFace(int, int, String, int)}
     20210615
         1、支持互动按钮组件
     20210524
