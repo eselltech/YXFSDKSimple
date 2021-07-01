@@ -1,0 +1,12 @@
+com.esell.component_common
+com.esell.component_common.cache
+com.esell.component_common.download
+com.esell.component_common.img
+com.esell.component_common.net2
+com.esell.component_dispatch
+com.esell.component_widget.v2
+com.esell.datahubrecord
+com.esell.yxf
+com.esell.yxf.bean
+com.esell.yxf.controller
+com.esell.yxf.v2

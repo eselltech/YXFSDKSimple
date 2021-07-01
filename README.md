@@ -1,6 +1,17 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
 ## [2xdoc](./doc2x)
 ## 2x版本
+    20210701
+        1、素材压缩 应用compress-str字段
+        2、支持bp下发移动流量控制
+        3、修复7.0以上定时广告异常
+    20210628
+        1、修复单视频播放 第二次播放 重复第一帧
+    20210625
+        1、添加物联网连接成功回调
+        {@link com.esell.yxf.v2.Yxf#addOnIotConnectListener(IOT.OnIotConnectListener)}
+        2、经纬度上报
+        {@link com.esell.yxf.v2.Yxf#publishLocation(double, double, Callback2)}
     20210623
         1、添加人脸数据记录公开方法
         {@link com.esell.yxf.v2.Yxf#noteFace(int, int, String, int)}
