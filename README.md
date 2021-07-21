@@ -1,6 +1,8 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
 ## [2xdoc](./doc2x)
 ## 2x版本
+    20210714
+        1、修复默认文本广告不显示异常
     20210709
         1、修改 使用3x指令 深度开关机、定时音量、基本控制
         2、修改文字广告3x格式

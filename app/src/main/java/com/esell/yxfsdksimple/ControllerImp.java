@@ -1,11 +1,14 @@
 package com.esell.yxfsdksimple;
 
 import android.content.Context;
+import android.content.Intent;
 
 import com.esell.component_log.Log;
+import com.esell.yxf.bean.AlarmOnOffItem4;
 import com.esell.yxf.controller.IController;
 
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * 远程控制实现
@@ -39,6 +42,11 @@ public class ControllerImp implements IController {
     }
 
     @Override
+    public void setPowerOnOffWeek(Context context, List<AlarmOnOffItem4> list) {
+
+    }
+
+    @Override
     public void cancelPowerOnOff(Context context) {
         Log.i("cancelPowerOnOff : ");
     }
@@ -61,6 +69,21 @@ public class ControllerImp implements IController {
     @Override
     public void firmwareReset(Context context) {
         Log.i("firmwareReset : ");
+    }
+
+    @Override
+    public void screenshotResponse(Context context, boolean success, String msg) {
+
+    }
+
+    @Override
+    public Intent createIntent(String action) {
+        return null;
+    }
+
+    @Override
+    public void sendBroadcast(Context context, Intent intent) {
+
     }
 
     @Override
