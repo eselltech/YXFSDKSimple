@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         yxf = Yxf.getInstance();
         /*打开调试信息*/
         yxf.debug(true);
-        yxf.attach(0, findViewById(R.id.container));
         /*广告列表请求回调*/
         /*yxf.addOnRequestDisplayListListener(new Callback<Map<Integer, List<IDisplayData>>>() {
             @Override
@@ -148,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 android.util.Log.e(TAG, "onFailed (line 26): code : " + code + ",msg : " + msg);
             }
         }, new Screen(0, 1080, 720), new Screen(1, 800, 400));
-
+        yxf.attach(0, findViewById(R.id.container));
     }
 
     @Override

@@ -1,6 +1,8 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
 ## [2xdoc](./doc2x)
 ## 2x版本
+    20210809
+        1、修复动态attach方法不刷新广告问题
     20210714
         1、修复默认文本广告不显示异常
     20210709
