@@ -1,6 +1,8 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
 ## [2xdoc](./doc2x)
 ## 2x版本
+    20210820
+        1、com.google.zxing:core改为远程依赖
     20210812
         1、修复设置屏幕旋转后重新启动黑屏问题
     20210809
