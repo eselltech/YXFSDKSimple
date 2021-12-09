@@ -1,6 +1,8 @@
 ## [1x版本](https://github.com/eselltech/YXFSDKSimple/tree/legacy-1x)
 ## [2xdoc](./doc2x)
 ## 2x版本
+    2.0.1-SNAPSHOT 20211209
+
     20210820
         1、com.google.zxing:core改为远程依赖
     20210812
@@ -70,7 +72,7 @@
         }
     }
 ## 添加依赖
-    implementation 'io.github.eselltech:yxf:2.0.0-SNAPSHOT'
+    implementation 'io.github.eselltech:yxf:2.0.1-SNAPSHOT'
 ## 必要配置
     implementation 'androidx.multidex:multidex:2.0.1'
 
